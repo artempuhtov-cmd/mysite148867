@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>My Personal Panel</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+
+  /* 🔥 ТВОЁ ФОТО ФОН */
+  background-image: url("your-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* затемнение фона */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* панель */
+.panel {
+  position: relative;
+  width: 300px;
+  margin: 80px auto;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: rgba(20,20,20,0.8);
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  background: #222;
+  color: white;
+}
+
+button:hover {
+  background: #444;
+}
+
+/* анимации */
+.heart, .star {
+  position: absolute;
+  font-size: 20px;
+  animation: fall 2s linear forwards;
+}
+
+.heart { color: red; }
+.star { color: yellow; }
+
+@keyframes fall {
+  from { transform: translateY(-50px); opacity: 1; }
+  to { transform: translateY(100vh); opacity: 0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="panel">
+  <h3>MY CONTROL PANEL</h3>
+
+  <button onclick="goSite()">🌐 Перейти на сайт</button>
+  <button onclick="playSound()">🔊 Звук</button>
+  <button onclick="startHearts()">❤️ Анимации</button>
+  <button onclick="startStars()">⭐ Звёзды</button>
+</div>
+
+<!-- звук -->
+<audio id="sound">
+  <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// 🌐 переход
+function goSite() {
+  window.open("https://ru.sex-studentki.click/home-porn?page=28&ysclid=mok0q96k3e621368695 ", "_blank");
+}
+
+// 🔊 звук
+function playSound() {
+  document.getElementById("sound").play();
+}
+
+// ❤️ сердца
+function startHearts() {
+  setInterval(() => {
+    let el = document.createElement("div");
+    el.className = "heart";
+    el.innerHTML = "❤️";
+
+    el.style.left = Math.random() * window.innerWidth + "px";
+    el.style.top = "-30px";
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3000);
+  }, 200);
+}
+
+// ⭐ звёзды
+function startStars() {
+  setInterval(() => {
+    let el = document.createElement("div");
+    el.className = "star";
+    el.innerHTML = "⭐";
+
+    el.style.left = Math.random() * window.innerWidth + "px";
+    el.style.top = "-30px";
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3000);
+  }, 200);
+}
+
+</script>
+
+</body>
+</html>
